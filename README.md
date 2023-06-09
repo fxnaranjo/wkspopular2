@@ -8,3 +8,7 @@ oc create secret docker-registry ibm-entitlement-key --docker-username=cp --dock
 
 
 oc get secrets -n ibm-common-services platform-auth-idp-credentials -ojsonpath='{.data.admin_password}' | base64 --decode && echo "" --------> GET CLOUD PAK DASHBOARD
+
+
+
+oc create configmap mqsc-ini --from-file=config.mqsc --from-file=example.ini
